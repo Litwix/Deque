@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import secrets from './secrets';
+import './Characters.css';
 
 const SingleCharacter = () => {
   const params = useParams();
@@ -21,7 +22,7 @@ const SingleCharacter = () => {
         console.log(res.data.results);
       })
       .catch((error) => console.log(error));
-  }, []);
+  }, [guid]);
 
   return (
     <div className="App">

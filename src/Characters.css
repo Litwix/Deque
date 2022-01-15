@@ -38,3 +38,31 @@ tr:nth-child(even) {
 tr:nth-child(odd) {
   background-color: rgb(101, 139, 148);
 }
+
+/* CSS for Single Character Page */
+
+.singleCharacterContainer {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: white;
+  margin: 100px auto;
+  width: 60%;
+  border-radius: 30px;
+  padding: 20px;
+}
+
+.singleCharacterContainer > div {
+  flex-grow: 1;
+  margin: 30px;
+}
+
+.singleCharacterContainer > div > h1 {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  padding-bottom: 20px;
+}
+
+.singleCharacterInfo {
+  text-align: left;
+}
