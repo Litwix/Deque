@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import secrets from './secrets';
 import './Characters.css';
@@ -18,7 +19,6 @@ class Characters extends React.Component {
       )
       .then((res) => {
         this.setState({ characters: res.data.results });
-        console.log(res.data.results);
       })
       .catch((error) => console.log(error));
   }
@@ -39,8 +39,10 @@ class Characters extends React.Component {
                 <th>Date Updated</th>
               </tr>
               {this.state.characters.map((character) => (
-                <tr>
-                  <td>{character.name}</td>
+                <tr key={character.id}>
+                  <td>
+                    <Link to={`/${character.guid}`}>{character.name}</Link>
+                  </td>
                   <td>
                     <img
                       src={character.image.icon_url}
