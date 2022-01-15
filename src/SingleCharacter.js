@@ -19,7 +19,6 @@ const SingleCharacter = () => {
       .then((res) => {
         setCharacter(res.data.results);
         setImage(res.data.results.image.original_url);
-        console.log(res.data.results);
       })
       .catch((error) => console.log(error));
   }, [guid]);
