@@ -29,8 +29,37 @@ class Characters extends React.Component {
         <h1>GIANT BOMB API</h1>
         <div className="characters">
           {this.state.characters.length === 0 && <h1>Loading...</h1>}
-          {this.state.characters.length > 0 &&
-            this.state.characters.map((character) => <h3>{character.name}</h3>)}
+          {this.state.characters.length > 0 && (
+            <table>
+              <tr>
+                <th>Name</th>
+                <th>Image</th>
+                <th>First Game</th>
+                <th>Date Added</th>
+                <th>Date Updated</th>
+              </tr>
+              {this.state.characters.map((character) => (
+                <tr>
+                  <td>{character.name}</td>
+                  <td>
+                    <img
+                      src={character.image.icon_url}
+                      alt="Avatar"
+                      width="100px"
+                      height="100px"
+                    />
+                  </td>
+                  <td>
+                    {character.first_appeared_in_game
+                      ? character.first_appeared_in_game.name
+                      : 'None'}
+                  </td>
+                  <td>{character.date_added.slice(0, 11)}</td>
+                  <td>{character.date_last_updated.slice(0, 11)}</td>
+                </tr>
+              ))}
+            </table>
+          )}
         </div>
       </div>
     );
