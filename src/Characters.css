@@ -17,6 +17,17 @@ body {
 
 /* CSS for All Character Page */
 
+.sort {
+  display: flex;
+  text-align: left;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.sort > h3 {
+  padding-right: 10px;
+}
+
 table {
   width: 100%;
 }

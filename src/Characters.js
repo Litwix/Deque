@@ -62,7 +62,7 @@ class Characters extends React.Component {
           {characters.length > 0 && (
             <div>
               <div className="sort">
-                <h3>Sort By: </h3>
+                <h3>Sort By:</h3>
                 <select onChange={this.handleSortChange}>
                   <option value="name">Name</option>
                   <option value="game">First Game</option>
